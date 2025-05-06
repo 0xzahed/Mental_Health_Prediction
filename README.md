@@ -1,58 +1,117 @@
+Got it — thanks for the clarification. If you're not using **Flask** and are instead using **`psutil`** (likely for system monitoring or metrics), then the project is more likely a **desktop or script-based ML utility**, not a web app.
+
+Here’s the corrected and relevant version of your `README.md` for the `Mental_Health_Prediction` repository:
+
+---
+
+```markdown
 # 🧠 Mental Health Prediction
 
-This project utilizes machine learning techniques to predict mental health outcomes based on survey data. It includes data preprocessing, model training, and a web application for user interaction.
+A machine learning-based Python project that predicts mental health status based on survey data. The project includes data preprocessing, model training, model serialization, and local deployment using Python scripts.
 
 ## 📂 Project Structure
 
-Mental_Health_Prediction/
-├── app.py # Flask web application
-├── mental_health.py # Data preprocessing and model training
-├── project.ipynb # Jupyter notebook with exploratory analysis
-├── survey.csv # Dataset containing survey responses
-├── KNN.sav # Saved K-Nearest Neighbors model
-├── Randomf.sav # Saved Random Forest model
-├── logisticRegression.sav # Saved Logistic Regression model
-├── Staking.sav # Saved Stacking model
-├── mental_health_model.sav # Finalized model for deployment
+```
 
+Mental\_Health\_Prediction/
+├── app.py                      # Main script for running predictions
+├── mental\_health.py            # Data preprocessing and model training
+├── project.ipynb               # Jupyter notebook for exploration and development
+├── survey.csv                  # Dataset containing mental health survey responses
+├── KNN.sav                     # Serialized K-Nearest Neighbors model
+├── Randomf.sav                 # Serialized Random Forest model
+├── logisticRegression.sav      # Serialized Logistic Regression model
+├── Staking.sav                 # Serialized Stacking ensemble model
+├── mental\_health\_model.sav     # Final trained model used in predictions
+
+````
+
+## 📦 Requirements
+
+Install required Python packages using:
+
+```bash
+pip install -r requirements.txt
+````
+
+Typical dependencies include:
+
+* `pandas`
+* `numpy`
+* `scikit-learn`
+* `joblib`
+* `psutil`
+* `matplotlib` (if plotting is used)
+* `seaborn` (optional for visualization)
+
+> Create a `requirements.txt` with:
+> `pip freeze > requirements.txt`
 
 ## 📊 Dataset
 
-The `survey.csv` file contains responses from individuals regarding various factors that may influence mental health. Features include:
+* **Source**: The `survey.csv` file contains survey responses about mental health in the workplace.
+* **Attributes** include: Age, Gender, Work Environment, Mental Health History, Family Background, etc.
 
-- **Demographics**: Age, gender, etc.
-- **Work-related factors**: Company size, remote work capability, etc.
-- **Mental health history**: Family history, past diagnosis, etc.
+## 🧠 Machine Learning Models
 
-## 🛠️ Features
+Trained and evaluated several ML algorithms:
 
-- **Data Preprocessing**: Handling missing values, encoding categorical variables, and feature scaling.
-- **Model Training**: Implementation of multiple algorithms including Logistic Regression, K-Nearest Neighbors, Random Forest, and a Stacking ensemble.
-- **Model Evaluation**: Assessment of model performance using appropriate metrics.
-- **Web Application**: A Flask-based interface (`app.py`) allowing users to input data and receive mental health predictions.
+* Logistic Regression
+* K-Nearest Neighbors
+* Random Forest
+* Stacking Classifier
 
-## 🚀 Getting Started
+Models are saved (`.sav` format) using `joblib` for efficient reuse.
 
-### Prerequisites
+## 🚀 How to Run
 
-Ensure you have the following installed:
+To make a prediction:
 
-- Python 3.x
-- Required Python packages (listed in `requirements.txt`)
+```bash
+python app.py
+```
 
-### Installation
+The script will:
 
-1. Clone the repository:
+1. Load the trained model.
+2. Use `psutil` to optionally monitor system resources.
+3. Predict outcomes based on sample or user-provided input.
 
-   ```bash
-   git clone https://github.com/0xzahed/Mental_Health_Prediction.git
-   cd Mental_Health_Prediction
-📈 Model Performance
-Include details about model accuracy, precision, recall, F1-score, or any relevant metrics here.
+## ⚙️ psutil Usage
 
-🤝 Contributing
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or suggestions.
+The project uses `psutil` to monitor system performance (CPU/memory usage) during model loading or prediction, useful for profiling or system-aware deployment.
 
-📄 License
-This project is licensed under the MIT License.
+## 📈 Model Performance
 
+Include metrics (manually or in your notebook) like:
+
+* Accuracy
+* Precision
+* Recall
+* F1-score
+* Confusion Matrix
+
+## 🧪 Notebook
+
+You can explore and modify the model pipeline using:
+
+```bash
+project.ipynb
+```
+
+It includes EDA, preprocessing steps, training procedures, and model evaluation.
+
+## 🤝 Contributions
+
+Suggestions, bug reports, or improvements are welcome! Feel free to fork this repository and submit a pull request.
+
+## 📄 License
+
+Licensed under the [MIT License](LICENSE).
+
+```
+
+---
+
+Would you like me to generate the `requirements.txt` for you based on your code files?
+```
