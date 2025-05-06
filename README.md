@@ -1,10 +1,4 @@
-Got it — thanks for the clarification. If you're not using **Flask** and are instead using **`psutil`** (likely for system monitoring or metrics), then the project is more likely a **desktop or script-based ML utility**, not a web app.
 
-Here’s the corrected and relevant version of your `README.md` for the `Mental_Health_Prediction` repository:
-
----
-
-```markdown
 # 🧠 Mental Health Prediction
 
 A machine learning-based Python project that predicts mental health status based on survey data. The project includes data preprocessing, model training, model serialization, and local deployment using Python scripts.
